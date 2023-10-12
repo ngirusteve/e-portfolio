@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEHICLE EMISSION MONITORING SYSTEM</title>
+    <link rel="stylesheet" href="project1a.css"> <!-- You can link an external CSS file for styling -->
+</head>
+<body>
+    <section id="project-header">
+       <header>
+          <h1>Vehicle Emission Monitoring System</h1>
+       </header>
+    </section>
+    <section id="project-description">
+        <h2>Project Introduction</h2>
+        <p>
+            With so many pollutants in the environment, ranging from industries and motor vehicles, it is now necessary to keep track of the damage
+            caused. This is important in order to facilitate making informed decisions in different areas depending on the level or extent of pollutants.
+            This project aims to create an all-in-one device to detect and record real-time data of vehicle emissions such as dust and Carbon(IV) Oxide.
+        </p>
+    </section>
+    <br> </br>
+    <br> </br>
+
+    <section id="project-images">
+        <h2>Project Images</h2>
+        
+        <img src="introduction.png" alt="Image 1 Description">
+        <br> </br>
+        <p> 
+            To monitor the amount of carbon dioxide levels and dust being emitted using IoT will help </br> regulate the emission of dust and carbon dioxide through integration of better </br>
+            technology in cars( hybrid vehicles), introduction of different types of fuels for vehicles such as hydrogen gas, this thus can help the government reduce road unworthy vehicles
+
+        </p>
+        <br> </br>
+        <img src="vehicle emissions efficiency.PNG" alt="Image 2 Description">
+        </br>
+        <p>
+            Fossil fuel powered road transport represents the ,ost significant source of transport related air pollution.</br>
+            The image above from the European Environment Agency displays sources of vehicle pollutants.   
+        </p>
+    </br>
+       <img src="visual set up.PNG" alt="image 3 Description">
+       <p>
+           We set up the prototype as seen in the figure above. </br>
+           The following equipment was used: </br>
+           <ul>
+               1. Shinyei PPD42NS</br>
+               2. ELT S300</br>
+               3. GSM SIM900</br>
+               4. Power Source</br>
+               5. MTC (Arduino Uno)</br>
+               6. Connecting wires</br>
+           </ul>
+       </p>
+        <!-- Add more images as needed -->
+    </section>
+    <header>
+        <h2> Working </h2>
+    </header>
+    <p>
+        The PPD42NS is an air particle sensor, typically, it's a dust sensor.<br>
+        Based on the light scattering principle, it always detects airborne particles.<br>
+        It provides a good indication of the air quality in an environment by measuring the dust concentration,<br>
+        with long-term high sensitivity and reliable data.
+    </p>
+</br>
+    <img src="results.PNG" alt="image 4 Description">
+       <p>
+           Thingspeak is a platform that offers resources for processing and visuallizing data</br>
+           from IoT devices.<br>
+           The image above shows the results for both Carbon(IV)Oxide levels and dust concentration.
+
+
+    <section id="code-snippets">
+        <h2>Sensor and micro-controller(Arduino) code</h2>
+        <pre>
+            <code>
+int pin = 8;
+unsigned long duration;
+unsigned long starttime;
+unsigned long sampletime_ms = 2000; 
+unsigned long lowpulseoccupancy = 0;
+float ratio = 0;
+float concentration = 0;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(8,INPUT);
+  starttime = millis(); 
+}
+
+void loop() {
+  duration = pulseIn(pin, LOW);
+  lowpulseoccupancy = lowpulseoccupancy+duration;
+  if ((millis()-starttime) >= sampletime_ms) //if the sampel time = = 30s
+  {
+    ratio = lowpulseoccupancy/(sampletime_ms*10.0);  
+    concentration = 1.1*pow(ratio,3)-3.8*pow(ratio,2)+520*ratio+0.62; 
+    Serial.print("Concentration = ");
+    Serial.print(concentration);
+    Serial.println(" pcs/0.01cf");
+    Serial.println("\n");
+    lowpulseoccupancy = 0;
+    starttime = millis();
+  }
+}
+</code>
+          </section>
+    <p>
+        The above code was written to integrate the sensor data to the other components of the microcontroller such as esp82ss. </br>
+        This module provides an online presence for the arduino board allowing it to send and upload data to any predefined platform on the net.</br>
+        In this case, Thingspeak.com. 
+    </br>
+    <br>
+    <br>
+    The ELT S300 is a Carbon(IV) Oxide sensor. <br>
+    We preferred the module because of persistent stability independent from
+    Temperature and Long Battery-time besides high
+    accuracy and small size. <br>
+    The module appears as a gold plated circuit board. We managed to interface it with the Arduino to transmit data to Thingspeak. <br>
+    </p>
+
+    <p>
+        The image below shows the layout of the devices. The top right is the GSM module, the one programmed to <br>
+        create a link to the internet to facilitate transfer of the real time data from the sensors to Thingspeak.<br>
+        <br>
+    </p>
+    <img src="Specific to project.PNG" alt="Image 4 Description">
+    <br>
+    <p>
+        The main challenges encountered was in the actual application in motor vehicles. <br>
+        It is important to note that a main factor for IoT device application is power source. The Arduino board<br> 
+        has a supply voltage of 12 Volts. <br>
+        On the other hand, a module such as the GSM module require a higher voltage and current source.
+        The solution suggested was the use of an adaptor in order to regulate the voltage from the car battery to an <br>
+        optimum level for the module's performance.
+    </p>    
+    <footer>
+        <p>&copy; 2023 Stephen Ngiru</p>
+    </footer>
+</body>
+</html>

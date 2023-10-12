@@ -1,0 +1,91 @@
+/* Center the content of the entire page */
+html, body {
+    /*background-color:rgb(144, 227, 238) ;
+    height: 40%;
+    margin: 0;
+    padding: 0;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+*/
+
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #6CB4EE;
+    font-family: Arial, sans-serif;
+}
+
+#project-header {
+    background-color: #1d0cb6; /* Blue background color */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 20px;
+    font-size: 30px; /* Adjust the font size to your preference */
+    font-weight: bold; /* Make the text bold */
+}
+/* Center the title text within the header */
+header h1 {
+    text-align: center;
+    padding: 20px;
+    font-size: 36px; /* Adjust the font size to your preference */
+    font-weight: bold;
+}
+
+/* Create a two-column layout for the project section */
+#project-description {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    justify-content: space-between; /* Space between columns */
+    align-items: flex-start; /* Align items at the top within the row */
+}
+
+/* Style the project images and code snippets (left column) */
+ 
+
+#code-snippets {
+    flex: 1; /* Each column takes half the available space */
+    padding: 10px; /* Add spacing around content */
+}
+
+/* Style the project images for the left column */
+#project-images img {
+    max-width: 100%; /* Ensure images don't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra space around the image */
+    margin: 10px 0; /* Add spacing between images */
+}
+
+/* Style the project description (right column) */
+#project-description p {
+    flex: 1; /* Expands to take available space */
+    padding: 10px; /* Add spacing around content */
+}
+
+/* Additional styles for specific elements */
+/* For section headings */
+h2 {
+    color: #071563; /* Blue */
+}
+
+/* For code snippets */
+#code-snippets pre {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 50px;
+    margin: 50px 0;
+    white-space: pre-wrap;
+}
+
+/* For the footer */
+footer {
+    background-color: #3498db; /* Blue */
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 50px;
+}
