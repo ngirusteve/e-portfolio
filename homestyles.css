@@ -1,0 +1,128 @@
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set the background color to a light shade of blue */
+body {
+    background-color: #6CB4EE;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header */
+header {
+    background-color: #3498db; /* A darker blue for the header */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+/* Navigation menu */
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Style the sections */
+section {
+    padding: 20px;
+}
+
+/* About section */
+#about {
+    background-color: #6CB4EE; /* Lighter blue */
+}
+
+/* Portfolio section */
+#portfolio {
+    background-color: #aed6f1; /* A slightly darker blue */
+}
+
+/* Contact section */
+#contact {
+    background-color: #87bde4; /* A slightly darker blue */
+}
+
+/* Style the project items in the portfolio section */
+/* .project {
+    background-color: #fff;
+    margin: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the footer */
+
+/* Style the project items in the portfolio section */
+/* .project {
+    background-color: #fff;
+    margin: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex; /* Use flexbox for layout */
+/*    align-items: center; /* Center vertically within the .project element */
+/*}
+
+/* Style the project image */
+
+/* Style the project items in the portfolio section */
+.project {
+    background-color: #fff;
+    margin: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+}
+
+/* Style the project image */
+.project img {
+    width: 50%; /* Set the image width to 50% of the container */
+    height: auto; /* Maintain the aspect ratio */
+    float: left; /* Float the image to the left */
+}
+
+/* Style the project description (paragraph) */
+.project p {
+    flex: 1; /* Expand to take up the remaining space on the right */
+}
+
+/* .project img {
+    max-width: 100px; /* Adjust the maximum width as needed */
+/*     margin-right: 20px; /* Add space between the image and paragraph */
+/*}
+
+/* Style the project description (paragraph) */
+.project p {
+    flex: 1; /* Expand to take up remaining space */
+}
+
+footer {
+    background-color: #3498db; /* Same as header color */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Style links */
+a {
+    color: #3498db;
+}
+
+a:hover {
+    text-decoration: underline;
+}
