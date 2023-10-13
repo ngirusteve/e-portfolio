@@ -1,12 +1,8 @@
 /* Center the content of the entire page */
 html, body {
-    height: 90%;
+    height: 100%; /* Change to 100% to fill the entire viewport height */
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Additional styles for specific elements */
@@ -20,34 +16,15 @@ h2 {
     color: #3498db; /* Blue */
 }
 
-
+/* For project images */
 #project-images img {
-    width: 50%; /* Set the image width to 50% of the container */
+    max-width: 100%; /* Ensure images scale down to fit the screen */
     height: auto; /* Maintain the aspect ratio */
-    float: left; /* Float the image to the left */
 }
 
 /* Style the project description (paragraph) */
 #project-images p {
-    flex: 1; /* Expand to take up the remaining space on the right */
-}
-
-/* .project img {
-    max-width: 100px; /* Adjust the maximum width as needed */
-/*     margin-right: 20px; /* Add space between the image and paragraph */
-/*}
-
-/* Style the project description (paragraph) */
-/* #project-images p {
-    flex: 1; /* Expand to take up remaining space */
-} */
-
-
-/* For project images */
-/* #project-images img {
-    max-width: 100%;
-    height: auto;
-    margin: 10px 0;
+    text-align: center; /* Center-align the text */
 }
 
 /* For code snippets */
