@@ -16,6 +16,34 @@ body, h1, h2, p {
     padding: 0;
 }
 
+/* Default styles for larger screens */
+/* ... your existing CSS rules ... */
+
+/* Media query for screens with a maximum width of 768px (typical for mobile phones) */
+@media (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    #project-header {
+        font-size: 20px; /* Decrease the font size for mobile */
+    }
+
+    #project-description {
+        flex-direction: column; /* Stack columns on top of each other for mobile */
+    }
+
+    #project-images img {
+        margin: 10px 0; /* Add spacing between images */
+    }
+
+    #code-snippets pre {
+        padding: 20px; /* Reduce the padding for code snippets */
+        margin: 20px 0; /* Add spacing between code snippets */
+    }
+
+    footer {
+        padding: 20px; /* Reduce the padding for the footer */
+    }
+}
+
 body {
     background-color: #6CB4EE;
     font-family: Arial, sans-serif;
@@ -26,7 +54,7 @@ body {
     color: #fff; /* White text color */
     text-align: center;
     padding: 20px;
-    font-size: 30px; /* Adjust the font size to your preference */
+    /* font-size: 30px;  Adjust the font size to your preference */
     font-weight: bold; /* Make the text bold */
 }
 /* Center the title text within the header */
@@ -40,7 +68,7 @@ header h1 {
 /* Create a two-column layout for the project section */
 #project-description {
     display: flex;
-    flex-direction: row; /* Horizontal layout */
+    /* flex-direction: row;  Horizontal layout */
     justify-content: space-between; /* Space between columns */
     align-items: flex-start; /* Align items at the top within the row */
 }
@@ -50,7 +78,7 @@ header h1 {
 
 #code-snippets {
     flex: 1; /* Each column takes half the available space */
-    padding: 10px; /* Add spacing around content */
+    /* padding: 10px;  Add spacing around content */
 }
 
 /* Style the project images for the left column */
@@ -87,5 +115,5 @@ footer {
     background-color: #3498db; /* Blue */
     color: #fff; /* White text */
     text-align: center;
-    padding: 50px;
+    /* padding: 50px; */
 }
