@@ -10,6 +10,17 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Default styles for larger screens */
+/* ... your existing CSS rules ... */
+
+/* Media query for screens with a maximum width of 768px (typical for mobile phones) */
+@media (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    header h1 {
+        font-size: 24px; /* Decrease font size for mobile */
+    }
+}
+
 /* Style the header */
 header {
     background-color: #3498db; /* A darker blue for the header */
